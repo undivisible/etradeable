@@ -1,19 +1,12 @@
-body {
-  font-family: 'Space Grotesk';
-}
+@keyframes entry {to {opacity: 1;}}
+@keyframes exit {to {opacity: 0;}}
 
-body::-webkit-scrollbar {
-  width: 0.5vw;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0);
-  border-radius: 100px;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--text);
-  border-radius: 100px;
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' 0,
+  'opsz' 24
 }
 
 /* Color Schemes */
@@ -30,14 +23,18 @@ body::-webkit-scrollbar-thumb {
   --one: #2e3440;
   --two: #3b4252;
   --three: #434c5e;
+  --four: #4c566a;
+  --five: #536377;
   --text: #eceff4;
   --textf: #eceff48a;
 }
 
 .sepia {
   --one: #eadbcb;
-  --two: #dcc1a7;
-  --three: #e3ceb9;
+  --two: #e3ceb9;
+  --three: #dcc1a7;
+  --four: #c0a080;
+  --five: #a08060;
   --text: black;
   --textf: #0000008a;
 }
@@ -46,6 +43,98 @@ body::-webkit-scrollbar-thumb {
   --one: #eceff4;
   --two: #d8dee9;
   --three: #e5e9f0;
+  --four: #cbd5e0;
+  --five: #a5b1c7;
   --text: black;
   --textf: #0000008a;
+}
+
+.forest {
+  --one: #003300;
+  --two: #073b07;
+  --three: #093f09;
+  --four: #0b570b;
+  --five: #0c5a0c;
+  --text: #eadbcb;
+  --textf: #eadbcb8a;
+}
+
+body {
+  font-family: 'Space Grotesk';
+  background-color: var(--one);
+  color: var(--text);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  opacity: 0;
+  animation: entry 1s ease-in forwards;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 100px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--text);
+  border-radius: 100px;
+}
+
+.title {
+  font-size: 16px;
+}
+
+.startbutton {
+  border: 1px solid var(--text);
+  border-radius: 5px;
+  background-color: var(--two);
+  font-size: 12px;
+  text-align: start;
+  padding: 10px 5px 10px 5px;
+  min-width: 150px;
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.startbutton * {
+  margin: 5px;
+}
+
+.add {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.theme {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.button {
+  background-color: var(--two);
+  min-width: 60px;
+  min-height: 60px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a:hover > * {
+  border: 1px dashed var(--text);
+  background-color: var(--three);
 }
