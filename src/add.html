@@ -12,8 +12,18 @@
     <link rel="stylesheet" href="index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
-  <body>
-    <div class="valuefilter">
+  <body class="dark center">
+    <a onclick="toggleTheme()">
+        <div class="theme button">
+          <span class="material-symbols-outlined">palette</span>
+        </div>
+    </a>
+    <a onclick="swap('index')">
+        <div class="button">
+            <span class="material-symbols-outlined">close</span>
+        </div>
+    </a>
+    <div class="ends valuefilter">
         we should be able to get you...&nbsp;<span id="bal">$26 000</span>
     </div>
     <div class="filter">
@@ -34,9 +44,11 @@
             <div class="rhalf" id="selectedcondition">condition</div>
         </div>
     </div>
-    <div class="bottombutton">
-        submit
-    </div>
+    <a onclick="swap('search')">
+        <div class="ends submit">
+            submit
+        </div>
+    </a>
     <script src="script.js"></script>
   </body>
 </html>

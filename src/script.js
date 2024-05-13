@@ -48,12 +48,25 @@ function toggleTheme() {
 }
 
 function swap(page) {
+    setCookie('location', page);
     page = page + '.html';
     document.body.style.opacity = 1;
     document.body.style.animation = 'exit 1s ease-out forwards';
     setTimeout(() => {
         window.location.href = page;
     }, 1000);
+}
+
+function locationCheck() {
+    const close = document.getElementById('close');
+    const palette = document.getElementById('palette');
+    const add = document.getElementById('add')
+    if (location = 'index') {
+        palette.style.top = 0;
+        palette.style.marginTop = '1vh';
+        palette.style.right = 0;
+        palette.style.marginRight = '1vw';
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -63,5 +76,6 @@ document.addEventListener("DOMContentLoaded", function() {
         body.classList.add(savedTheme);
         currentTheme = savedTheme;
     }
+    locationCheck();
 });
   

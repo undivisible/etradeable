@@ -65,9 +65,6 @@ body {
   color: var(--text);
   height: 100vh;
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 0;
   opacity: 0;
   animation: entry 1s ease-in forwards;
@@ -85,6 +82,13 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: var(--text);
   border-radius: 100px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .title {
@@ -112,29 +116,82 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   bottom: 0;
   right: 0;
-  margin-right: 10px;
-  margin-bottom: 10px;
+  margin-right: 1vw;
+  margin-bottom: 1vh;
 }
 
 .theme {
   position: absolute;
   top: 0;
   right: 0;
-  margin-right: 10px;
-  margin-top: 10px;
+  margin-right: 1vw;
+  margin-top: 1vh;
 }
 
 .button {
   background-color: var(--two);
-  min-width: 60px;
-  min-height: 60px;
-  border-radius: 30px;
+  width: 6vh;
+  height: 6vh;
+  border-radius: 3vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-a:hover > * {
-  border: 1px dashed var(--text);
+.ends {
+  width: 96vw;
+  height: 6vh;
+  border-radius: 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--two);
+  margin-left: 2vw;
+  position: absolute;
+  left: 0;
+}
+
+.valuefilter {
+  top: 0;
+  margin-top: 2vh;
+  margin-left: 9vw;
+  width: 90vw;
+}
+
+.submit {
+  bottom: 0;
+  margin-bottom: 2vh;
+}
+
+.filtersection {
+  width: 92vw;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  border-radius: 3vw;
   background-color: var(--three);
+  margin: 1vw 1vh 1vw 1vh;
+}
+
+.filter {
+  background-color: var(--two);
+  border-radius: 3vh;
+  width: 94vw;
+}
+
+.lhalf {
+  margin-left: 3vw;
+  left: 0;
+}
+
+.rhalf {
+  margin-right: 3vw;
+  right: 0;
+  margin-left: auto;
+  left: 0;
+  color: var(--textf);
+}
+
+.filtersection:hover, .submit:hover, .button:hover, .startbutton:hover {
+  background-color: var(--four);
 }
