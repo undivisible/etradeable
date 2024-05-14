@@ -48,6 +48,10 @@ function toggleTheme() {
 }
 
 function swap(page) {
+    if (page === "searchm") {
+        setCookie('tolkoSearch', 'true');
+        page = 'search';
+    }
     page = page + '.html';
     document.body.style.opacity = 1;
     document.body.style.animation = 'exit 1s ease-out forwards';
@@ -57,11 +61,16 @@ function swap(page) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+    const balContainer = document.getElementById('balc');
     const savedTheme = getCookie('theme');
+    var tolkoSearch = getCookie('tolkoSearch');
     if (savedTheme) {
         const body = document.body;
         body.classList.add(savedTheme);
         currentTheme = savedTheme;
+    }
+    if (tolkoSearch === 'true') {
+        balContainer.style.display = 'none';
     }
 });
   

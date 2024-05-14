@@ -152,6 +152,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .hcenter {
+  display: flex;
   justify-content: center;
 }
 
@@ -205,32 +206,28 @@ body::-webkit-scrollbar-thumb {
 .top {
   display: flex;
   align-items: center;
-  width: 98vw;
-  margin-left: 2vw;
   margin-top: 1vh;
+  right: 0;
+  margin-right: 2vw;
+  position: absolute;
 }
 
 .top > * {
-  margin-right: 2vw;
+  margin-left: 2vw;
 }
 
 .bottom {
-  width: 98vw;
-  bottom: 0;
-  margin-bottom: 2vh;
+  margin-top: 1vh;
   position: absolute;
   display: flex;
   align-items: center;
   height: 6vh;
-  left: 0;
 }
 
 .searchContainer {
-  display: flex;
-  width: 88vw;
+  width: 30vw;
   height: 6vh;
   background-color: var(--three);
-  align-items: center;
   border-radius: 3vh;
   margin-left: 1vw;
 }
@@ -244,9 +241,9 @@ body::-webkit-scrollbar-thumb {
   width: max-content;
   color: var(--text);
   font-family: 'Space Grotesk';
-  height: 100%;
+  height: 96%;
   width: 100%;
-  border-radius: 50%;
+  border-radius: 3vh;
 }
 
 .filterList {
@@ -256,9 +253,6 @@ body::-webkit-scrollbar-thumb {
 
 .balList{
   height: 6vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 3vh;
   background-color: var(--three);
   width: 10vw;
@@ -270,7 +264,24 @@ body::-webkit-scrollbar-thumb {
   border-radius: 3vh;
 }
 
+.viewMode {display: none;}
+
 @media screen and (max-device-width: 765px) and (orientation: portrait) {
   body {font-size: 9px;}
   .balList {width: 100%;}
+  .top > * {margin-right: 2vw;}
+  .viewMode {display: flex;}
+  .searchContainer{width: 88vw;}
+  .bottom {
+    width: 98vw;
+    bottom: 0;
+    margin-bottom: 2vh;
+    left: 0;
+    margin-top: none;
+  }
+  .top {
+    width: 98vw;
+    margin-left: 2vw;
+  }
+  
 }
