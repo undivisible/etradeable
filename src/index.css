@@ -68,6 +68,7 @@ body {
   margin: 0;
   opacity: 0;
   animation: entry 1s ease-in forwards;
+  overflow: none;
 }
 
 body::-webkit-scrollbar {
@@ -83,6 +84,8 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--text);
   border-radius: 100px;
 }
+
+*:focus {outline: none;}
 
 .center {
   display: flex;
@@ -142,20 +145,25 @@ body::-webkit-scrollbar-thumb {
   width: 96vw;
   height: 6vh;
   border-radius: 3vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: var(--two);
   margin-left: 2vw;
   position: absolute;
   left: 0;
 }
 
+.hcenter {
+  justify-content: center;
+}
+
+.vcenter {
+  display: flex;
+  align-items: center;
+}
+
 .valuefilter {
   top: 0;
   margin-top: 2vh;
-  margin-left: 9vw;
-  width: 90vw;
+  width: 96vw;
 }
 
 .submit {
@@ -192,6 +200,77 @@ body::-webkit-scrollbar-thumb {
   color: var(--textf);
 }
 
-.filtersection:hover, .submit:hover, .button:hover, .startbutton:hover {
-  background-color: var(--four);
+.filtersection:hover, .submit:hover, .button:hover, .startbutton:hover {background-color: var(--four);}
+
+.top {
+  display: flex;
+  align-items: center;
+  width: 98vw;
+  margin-left: 2vw;
+  margin-top: 1vh;
+}
+
+.top > * {
+  margin-right: 2vw;
+}
+
+.bottom {
+  width: 98vw;
+  bottom: 0;
+  margin-bottom: 2vh;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 6vh;
+  left: 0;
+}
+
+.searchContainer {
+  display: flex;
+  width: 88vw;
+  height: 6vh;
+  background-color: var(--three);
+  align-items: center;
+  border-radius: 3vh;
+  margin-left: 1vw;
+}
+
+.searchContainer > * {margin-left: 2vw;}
+
+.search {
+  background-color: var(--three);
+  border: none;
+  height: max-content;
+  width: max-content;
+  color: var(--text);
+  font-family: 'Space Grotesk';
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.filterList {
+  margin-left: 2vh;
+  bottom: 0;
+}
+
+.balList{
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3vh;
+  background-color: var(--three);
+  width: 10vw;
+}
+
+.pill {
+  background-color: var(--two);
+  display: flex;
+  border-radius: 3vh;
+}
+
+@media screen and (max-device-width: 765px) and (orientation: portrait) {
+  body {font-size: 9px;}
+  .balList {width: 100%;}
 }

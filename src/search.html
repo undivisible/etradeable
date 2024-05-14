@@ -12,22 +12,45 @@
     <link rel="stylesheet" href="index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
-  <body>
+  <body class="dark">
     <div class="top">
-        <div>
-            <div></div>
-            <div></div>
-        </div>
-        <div></div>
-        <div></div>
+        <a onclick="toggleView()">
+          <div class="button">
+            <span class="material-symbols-outlined" id="view">dehaze</span>
+          </div>
+        </a>
+        <div class="balList"><span id="bal">$26 000</span></div>
+        <div class="pill">
+          <a onclick="toggleTheme()">
+            <div class="paletteList button">
+              <span class="material-symbols-outlined">palette</span>
+            </div>
+          </a>
+          <a onclick="swap('add')">
+            <div class="addList button">
+              <span class="material-symbols-outlined">add</span>
+            </div>
+          </a>
+          <a onclick="swap('index')">
+            <div class="closeList button">
+              <span class="material-symbols-outlined">close</span>
+            </div>
+          </a>
+        </div> 
     </div>
     <div class="list">
 
     </div>
     <div class="bottom">
-        <span></span>
-        <input type="text" placeholder="search anything">
-        <div></div>
+        <div class="searchContainer">
+          <span class="material-symbols-outlined">search</span>
+          <input type="text" placeholder="search anything" class="search">
+        </div>
+        <a>
+          <div class="button filterList">
+            <span class="material-symbols-outlined">filter_list</span>
+          </div>
+        </a>
     </div>
     <script src="script.js"></script>
   </body>

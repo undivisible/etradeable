@@ -13,18 +13,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body class="dark center">
-    <a onclick="toggleTheme()">
-        <div class="theme button">
-          <span class="material-symbols-outlined">palette</span>
+    <div class="ends valuefilter vcenter">
+        <a onclick="swap('index')">
+            <div class="button closeAdd">
+                <span class="material-symbols-outlined">close</span>
+            </div>
+        </a>
+        <a onclick="toggleTheme()">
+            <div class="button paletteAdd">
+              <span class="material-symbols-outlined">palette</span>
+            </div>
+        </a>
+        <div style="margin-left: 1vw;">
+            we should be able to get you...&nbsp;<span id="bal">$26 000</span>
         </div>
-    </a>
-    <a onclick="swap('index')">
-        <div class="button">
-            <span class="material-symbols-outlined">close</span>
-        </div>
-    </a>
-    <div class="ends valuefilter">
-        we should be able to get you...&nbsp;<span id="bal">$26 000</span>
     </div>
     <div class="filter">
         <div class="filtersection">
@@ -45,7 +47,7 @@
         </div>
     </div>
     <a onclick="swap('search')">
-        <div class="ends submit">
+        <div class="ends submit hcenter vcenter">
             submit
         </div>
     </a>
