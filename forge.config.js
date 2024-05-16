@@ -41,4 +41,16 @@ module.exports = {
       [FuseV1Options.OnlyLoadAppFromAsar]: true,
     }),
   ],
+  publishers: [
+    {
+      name: 'undivisible/etradeable',
+      config: {
+        repository: {
+          owner: 'me',
+          name: 'trade thing'
+        },
+        prerelease: true
+      }
+    }
+  ]
 };
