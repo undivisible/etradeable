@@ -69,6 +69,10 @@ function updatePrice(condition) {
     if (balance === 0) {
         balance = 'nothing, sorry';
     }
+
+    setCookie('make', make);
+    setCookie('condition', condition);
+    setCookie('year', year);
   
     updateBalance(balance);
 }
@@ -122,10 +126,21 @@ function toggleTheme() {
 document.addEventListener("DOMContentLoaded", function() {
     updatePrice();
     const savedTheme = getCookie('theme');
+    const savedMake = getCookie('make');
+    const savedYear = getCookie('year');
+    const savedCondition = getCookie('condition');
+    const makeId = document.getElementById('make');
+    const yearId = document.getElementById('year');
     if (savedTheme) {
         const body = document.body;
         body.classList.add(savedTheme);
         currentTheme = savedTheme;
+    }
+    else if (savedMake) {
+        makeId.value = savedMake;
+        yearId.value = savedYear;
+        cond = savedCondition;
+        updatePrice(savedCondition);
     }
     const inputFields = document.querySelectorAll('input');
     const handleInputChange = (event) => {

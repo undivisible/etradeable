@@ -122,9 +122,9 @@ body {
   height: 6vh;
   display: flex;
   align-items: center;
-  border-radius: 3vw;
+  border-radius: 3vh;
   background-color: var(--three);
-  margin: 1vw 1vh 1vw 1vh;
+  margin: 1vh 1vw 1vh 1vw;
 }
 
 .rhalfc a {
@@ -177,3 +177,8 @@ body {
 
 .filterSection:hover, .condNoBack a:hover, .button:hover  {background-color: var(--four);}
 .condNoBack:hover {background-color: var(--three);}
+
+@media screen and (max-device-width: 765px) and (orientation: portrait) {
+  body {font-size: 9px;}
+  .rhalf, .rhalfc {font-size: 7px;}
+}
