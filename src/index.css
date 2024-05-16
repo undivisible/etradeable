@@ -1,6 +1,7 @@
 @keyframes entry {to {opacity: 1;}}
 @keyframes exit {to {opacity: 0;}}
 
+
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
@@ -188,9 +189,26 @@ body::-webkit-scrollbar-thumb {
   width: 94vw;
 }
 
+.rhalfc a {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ldcf {
+  border-top-right-radius: 3vh;
+  border-bottom-right-radius: 3vh;
+}
+
 .lhalf {
   margin-left: 3vw;
   left: 0;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
 }
 
 .rhalf {
@@ -198,10 +216,29 @@ body::-webkit-scrollbar-thumb {
   right: 0;
   margin-left: auto;
   left: 0;
-  color: var(--textf);
+  color: var(--text);
+  background-color: transparent;
+  font-size: 16px;
+  text-align: end;
+  border: none;
+  font-family: 'Space Grotesk';
+  height: 98%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.filtersection:hover, .submit:hover, .button:hover, .startbutton:hover {background-color: var(--four);}
+.rhalfc {
+  height: 98%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filtersection:hover, .submit:hover, .button:hover, .startbutton:hover, .condnoback a:hover {background-color: var(--four);}
+.condnoback:hover {background-color: var(--three);}
 
 .top {
   display: flex;
@@ -265,6 +302,33 @@ body::-webkit-scrollbar-thumb {
 }
 
 .viewMode {display: none;}
+
+#video {
+  width: 320px;
+  height: 240px;
+}
+
+#photo {
+  width: 320px;
+  height: 240px;
+}
+
+#canvas {
+  display: none;
+}
+
+.camera {
+  width: 340px;
+  display: inline-block;
+}
+
+.output {
+  width: 340px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.contentarea {width: 760px;}
 
 @media screen and (max-device-width: 765px) and (orientation: portrait) {
   body {font-size: 9px;}

@@ -60,7 +60,7 @@ function swap(page) {
     }, 1000);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function(){
     const balContainer = document.getElementById('balc');
     const savedTheme = getCookie('theme');
     var tolkoSearch = getCookie('tolkoSearch');
@@ -73,4 +73,3 @@ document.addEventListener("DOMContentLoaded", function() {
         balContainer.style.display = 'none';
     }
 });
-  

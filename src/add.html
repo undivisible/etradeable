@@ -25,32 +25,44 @@
             </div>
         </a>
         <div style="margin-left: 1vw;">
-            we should be able to get you...&nbsp;<span id="bal">$26 000</span>
+            we should be able to get you...&nbsp;<span id="bal">calculating</span>
         </div>
     </div>
     <div class="filter">
         <div class="filtersection">
             <div class="lhalf">make</div>
-            <div class="rhalf" id="selectedmake">make</div>
+            <input class="rhalf" id="make" placeholder="make">
         </div>
         <div class="filtersection">
             <div class="lhalf">model</div>
-            <div class="rhalf" id="selectedmodel">model</div>
+            <input class="rhalf" id="model" placeholder="model">
         </div>
         <div class="filtersection">
             <div class="lhalf">year</div>
-            <div class="rhalf" id="selectedyear">year</div>
+            <input class="rhalf" id="year" placeholder="year">
         </div>
-        <div class="filtersection">
+        <div class="filtersection condnoback">
             <div class="lhalf">condition</div>
-            <div class="rhalf" id="selectedcondition">condition</div>
+            <div class="rhalfc">
+                <a onclick="cond('p')">perfect</a>
+                <a onclick="cond('vg')">very good</a>
+                <a onclick="cond('g')">good</a>
+                <a onclick="cond('ng')">not great</a>
+                <a onclick="cond('d')" class="ldcf">damaged</a>
+            </div>
+        </div>
+        
+        <div class="filtersection">
+            <div class="lhalf">color</div>
+            <input class="rhalf" id="color" placeholder="color">
         </div>
     </div>
-    <a onclick="swap('search')">
+    <a onclick="add('search')">
         <div class="ends submit hcenter vcenter">
             submit
         </div>
     </a>
-    <script src="script.js"></script>
+    <script src="frontend.js"></script>
+    <script src="backend.js"></script>
   </body>
 </html>
