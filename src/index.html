@@ -13,29 +13,36 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body class="dark center">
-    <div class="title">
-      trade in your car
-      <a onclick="swap('photosearch')">
-        <div class="startbutton">
-          <span class="material-symbols-outlined">photo_camera</span>take a photo
+    <div class="ends valuefilter vcenter">
+        <a onclick="toggleTheme()">
+            <div class="button paletteAdd">
+              <span class="material-symbols-outlined">palette</span>
+            </div>
+        </a>
+        <div style="margin-left: 1vw;">
+            we should be able to get you...&nbsp;<span id="bal">nothing, sorry</span>
         </div>
-      </a>
-      <a onclick="swap('searchm')">
-        <div class="startbutton">
-          <span class="material-symbols-outlined">search</span>search manually
-        </div>
-      </a>
     </div>
-    <a onclick="swap('add')">
-      <div class="add button">
-        <span class="material-symbols-outlined">add</span>
-      </div>
-    </a>
-    <a onclick="toggleTheme()">
-      <div class="theme button">
-        <span class="material-symbols-outlined">palette</span>
-      </div>
-    </a>
-    <script src="frontend.js"></script>
+    <div class="filter">
+        <div class="filterSection">
+            <div class="lhalf">make/model</div>
+            <input class="rhalf" id="make" placeholder="make">
+        </div>
+        <div class="filterSection">
+            <div class="lhalf">year</div>
+            <input class="rhalf" id="year" placeholder="year">
+        </div>
+        <div class="filterSection condNoBack">
+            <div class="lhalf">condition</div>
+            <div class="rhalfc">
+                <a onclick="cond('p')" id="p">perfect</a>
+                <a onclick="cond('vg')" id="vg">very good</a>
+                <a onclick="cond('g')" id="g">good</a>
+                <a onclick="cond('ng')" id="ng">not great</a>
+                <a onclick="cond('d')" class="ldcf" id="d">damaged</a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>

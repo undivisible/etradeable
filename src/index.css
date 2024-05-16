@@ -1,7 +1,6 @@
 @keyframes entry {to {opacity: 1;}}
 @keyframes exit {to {opacity: 0;}}
 
-
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
@@ -72,65 +71,7 @@ body {
   overflow: none;
 }
 
-body::-webkit-scrollbar {
-  width: 0.5vw;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0);
-  border-radius: 100px;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--text);
-  border-radius: 100px;
-}
-
 *:focus {outline: none;}
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.title {
-  font-size: 16px;
-}
-
-.startbutton {
-  border: 1px solid var(--text);
-  border-radius: 5px;
-  background-color: var(--two);
-  font-size: 12px;
-  text-align: start;
-  padding: 10px 5px 10px 5px;
-  min-width: 150px;
-  display: flex;
-  align-items: center;
-  margin-top: 5px;
-}
-
-.startbutton * {
-  margin: 5px;
-}
-
-.add {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin-right: 1vw;
-  margin-bottom: 1vh;
-}
-
-.theme {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-right: 1vw;
-  margin-top: 1vh;
-}
 
 .button {
   background-color: var(--two);
@@ -142,6 +83,13 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .ends {
   width: 96vw;
   height: 6vh;
@@ -150,11 +98,6 @@ body::-webkit-scrollbar-thumb {
   margin-left: 2vw;
   position: absolute;
   left: 0;
-}
-
-.hcenter {
-  display: flex;
-  justify-content: center;
 }
 
 .vcenter {
@@ -168,12 +111,13 @@ body::-webkit-scrollbar-thumb {
   width: 96vw;
 }
 
-.submit {
-  bottom: 0;
-  margin-bottom: 2vh;
+.filter {
+  background-color: var(--two);
+  border-radius: 3vh;
+  width: 94vw;
 }
 
-.filtersection {
+.filterSection {
   width: 92vw;
   height: 6vh;
   display: flex;
@@ -181,12 +125,6 @@ body::-webkit-scrollbar-thumb {
   border-radius: 3vw;
   background-color: var(--three);
   margin: 1vw 1vh 1vw 1vh;
-}
-
-.filter {
-  background-color: var(--two);
-  border-radius: 3vh;
-  width: 94vw;
 }
 
 .rhalfc a {
@@ -237,115 +175,5 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
 }
 
-.filtersection:hover, .submit:hover, .button:hover, .startbutton:hover, .condnoback a:hover {background-color: var(--four);}
-.condnoback:hover {background-color: var(--three);}
-
-.top {
-  display: flex;
-  align-items: center;
-  margin-top: 1vh;
-  right: 0;
-  margin-right: 2vw;
-  position: absolute;
-}
-
-.top > * {
-  margin-left: 2vw;
-}
-
-.bottom {
-  margin-top: 1vh;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  height: 6vh;
-}
-
-.searchContainer {
-  width: 30vw;
-  height: 6vh;
-  background-color: var(--three);
-  border-radius: 3vh;
-  margin-left: 1vw;
-}
-
-.searchContainer > * {margin-left: 2vw;}
-
-.search {
-  background-color: var(--three);
-  border: none;
-  height: max-content;
-  width: max-content;
-  color: var(--text);
-  font-family: 'Space Grotesk';
-  height: 96%;
-  width: 100%;
-  border-radius: 3vh;
-}
-
-.filterList {
-  margin-left: 2vh;
-  bottom: 0;
-}
-
-.balList{
-  height: 6vh;
-  border-radius: 3vh;
-  background-color: var(--three);
-  width: 10vw;
-}
-
-.pill {
-  background-color: var(--two);
-  display: flex;
-  border-radius: 3vh;
-}
-
-.viewMode {display: none;}
-
-#video {
-  width: 320px;
-  height: 240px;
-}
-
-#photo {
-  width: 320px;
-  height: 240px;
-}
-
-#canvas {
-  display: none;
-}
-
-.camera {
-  width: 340px;
-  display: inline-block;
-}
-
-.output {
-  width: 340px;
-  display: inline-block;
-  vertical-align: top;
-}
-
-.contentarea {width: 760px;}
-
-@media screen and (max-device-width: 765px) and (orientation: portrait) {
-  body {font-size: 9px;}
-  .balList {width: 100%;}
-  .top > * {margin-right: 2vw;}
-  .viewMode {display: flex;}
-  .searchContainer{width: 88vw;}
-  .bottom {
-    width: 98vw;
-    bottom: 0;
-    margin-bottom: 2vh;
-    left: 0;
-    margin-top: none;
-  }
-  .top {
-    width: 98vw;
-    margin-left: 2vw;
-  }
-  
-}
+.filterSection:hover, .condNoBack a:hover, .button:hover  {background-color: var(--four);}
+.condNoBack:hover {background-color: var(--three);}

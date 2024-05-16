@@ -1,62 +1,105 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp } from './firebase/app';
 var oncec = false;
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA6er6NuL1iu1jyiezrec4xphG5kcU-pR8",
-  authDomain: "etradeable.firebaseapp.com",
-  projectId: "etradeable",
-  storageBucket: "etradeable.appspot.com",
-  messagingSenderId: "590598482683",
-  appId: "1:590598482683:web:5ad01b18b1610b42861e5e"
+    apiKey: "AIzaSyA6er6NuL1iu1jyiezrec4xphG5kcU-pR8",
+    authDomain: "etradeable.firebaseapp.com",
+    projectId: "etradeable",
+    storageBucket: "etradeable.appspot.com",
+    messagingSenderId: "590598482683",
+    appId: "1:590598482683:web:5ad01b18b1610b42861e5e"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
+
+var oncec = false;
+var condition = '';
 
 function cond(conditionsel) {
     oncec = true;
-    var condition = conditionsel;
+    condition = conditionsel;
 }
 
-function updatebalance(balanceint) {
-
-
-}
-
-function updateprice() {
+function updateBalance(balanceInt) {
     const bal = document.getElementById('bal');
-    make = make.toLowerCase();
-    model = make.toLowerCase();
-    condition = condition.toLowerCase();
-    if (make === 'voldza' || model === 'voldza') {balance = 32000;}
-    else if (make === 'forden' || model === 'forden') {balance = 25000;}
-    else if (make === 'toyodai' || model === 'toyodai') {balance = 26000;}
-    else if (make === 'voldza' || model === 'voldza') {balance = 19000;}
-    else if (make === 'voldza' || model === 'voldza') {balance = 50500;} 
-    if (oncec && condition != 'p') {
-        if (condition = 'vg') {balance = balance * 0.8;}
-        else if (condition = 'g') {balance = balance * 0.7;}
-        else if (condition = 'ng') {balance = balance * 0.5;}
-        else if (condition = 'd') {balance = balance * 0.3;}
+    bal.innerHTML = balanceInt.toString();
+}
+
+function updatePrice() {
+    const makeId = document.getElementById('make');
+    const modelId = document.getElementById('model');
+    const yearId = document.getElementById('year');
+    const colorId = document.getElementById('color');
+    const make = makeId.value.toLowerCase();
+    const model = modelId.value.toLowerCase();
+    let balance = 0;
+  
+    if (make === 'voldza' || model === 'voldza') {
+        balance = 32000;
+    } 
+    else if (make === 'forden' || model === 'forden') {
+        balance = 25000;
+    } 
+    else if (make === 'toyodai' || model === 'toyodai') {
+        balance = 26000;
+    } 
+    else if (make === 'voldza' || model === 'voldza') {
+        balance = 19000;
+    } 
+    else if (make === 'voldza' || model === 'voldza') {
+        balance = 50500;
     }
-    if (2022 > year < 2018) {balance = balance * 0.7;}
-    else if (2018 > year < 2013) {balance = balance * 0.5;}
-    else if (2013 > year) {balance = balance * 0.2;}
-    bal.innerHTML = balance.toString();
-}
+  
+    if (oncec && condition !== 'p') {
+      if (condition === 'vg') {
+            balance = balance * 0.8;
+      } 
+      else if (condition === 'g') {
+            balance = balance * 0.7;
+      } 
+      else if (condition === 'ng') {
+            balance = balance * 0.5;
+      } 
+      else if (condition === 'd') {
+            balance = balance * 0.3;
+      }
+    }
+  
+    const year = parseInt(yearId.value);
+    if (2022 >= year && year >= 2018) {
+        balance = balance * 0.7;
+    } 
+    else if (2018 > year && year >= 2013) {
+        balance = balance * 0.5;
+    } 
+    else if (2013 > year) {
+        balance = balance * 0.2;
+    }
+  
+    updateBalance(balance);
+  }
 
 
 
-function add() {
+  function add() {
     const database = firebase.database();
+    const makeId = document.getElementById('make');
+    const modelId = document.getElementById('model');
+    const yearId = document.getElementById('year');
+    const colorId = document.getElementById('color');
+    const make = makeId.value;
+    const model = modelId.value;
+    const year = yearId.value;
+    const color = colorId.value;
+  
     database.ref('cars').push({
-        name: make + " " + model,
-        attributes: [year, condition, color]
+      name: `${make} ${model}`,
+      attributes: [year, condition, color]
     });
-}
+  }
 
 function get() {
     database.ref('cars').once('value', snapshot => {
@@ -118,26 +161,15 @@ function get() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    var balance = 0;
-    const makeid = document.getElementById('make');
-    const modelid = document.getElementById('model');
-    const yearid = document.getElementById('year');
-    const conditionid = 'd';
-    const colorid = document.getElementById('color');
-    const make = makeid.value;
-    const model = modelid.value;
-    const year = yearid.value;
-    const condition = '';
-    const color = colorid.value;
     const inputFields = document.querySelectorAll('input');
     const handleInputChange = (event) => {
-        if (event.target.matches('input')) {
-            updatePrice();
-        }
+      if (event.target.matches('input')) {
+        updatePrice();
+      }
     };
-
+  
     inputFields.forEach((field) => {
-        field.addEventListener('input', handleInputChange);
+      field.addEventListener('input', handleInputChange);
     });
-});
+  });
   
