@@ -52,6 +52,20 @@
                 0% {opacity: 1;}
                 100% {opacity: 0;}
             }
+
+            @media screen and (max-device-width: 765px) and (orientation: portrait) {
+                @keyframes load {
+                    0% {
+                        height: 0;
+                    }
+                    100% {
+                        height: 100%;
+                    }
+                }
+                .loading-bar-inner {
+                    background: linear-gradient(270deg, #00000079, #ffffff79);
+                }
+            }
         </style>
     </head>
     <body>
